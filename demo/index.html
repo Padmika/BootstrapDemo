@@ -7,6 +7,24 @@
     <title>Bootstrap Demo by Padmika</title>
     <!-- Bootstrap -->
     <link href="Content/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+     .footer {
+    background-color: #000000;
+    }
+
+     body {
+         position: relative;
+         padding-top: 70px;
+     }
+
+     @media (max-width: 979px) {
+         body {
+            padding-top: 0px;
+         }
+     }
+    </style>
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -14,9 +32,10 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body>
+
+<body data-spy="scroll" data-target=".navbar">
     <!-- navbar -->
-    <nav class="navbar navbar-default navbar-inverse">
+    <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -32,17 +51,17 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Photo Blog</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#photogallery">Photo Gallery</a></li>
+                    <li><a href="#uploadphoto">Upload Photo</a></li>
                 </ul>
                 <form class="navbar-form navbar-left" role="search">
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Search">
                     </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
                 </form>
-                <button type="button" class="btn btn-default navbar-btn navbar-right">Login</button>
+                <button type="button" class="btn btn-default navbar-btn pull-right">Login</button>
                 <!--<ul class="nav navbar-nav navbar-right">
                     <li><a href="#">More</a></li>
                 </ul>-->
@@ -97,13 +116,40 @@
     <!-- /.carousel -->
     
     <br />
+    <!-- jumbotron -->
+    <div id="about" class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header text-center">About</h1>
+            </div>
+            <!--<div class="col-lg-12">
+            <h1 class="page-header">Upload Photo</h1>
+        </div>-->
+        </div>
+        <div class="jumbotron">
+            <h2 class="page-header"> Bootstrap Demo </h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                mollit anim id est laborum
+            </p>
+            <p>
+                <a href="#" target="_blank" class="btn btn-primary btn-lg"> Products </a>
+            </p>
+        </div>
+    </div>
+    <!-- /.jumbotron -->
+
+    <br />
     <!-- Thumbnail container -->
-    <div class="container">
+    <div id="photogallery" class="container">
 
         <div class="row">
 
             <div class="col-lg-12">
-                <h1 class="page-header">Photo Gallery</h1>
+                <h1 class="page-header text-center">Photo Gallery</h1>
             </div>
 
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
@@ -172,24 +218,62 @@
     </div>
     <!-- /.Thumbnail container -->
 
-    <br />
-    <!-- jumbotron -->
-    <div class="jumbotron">
-        <div class="container">
-            <h1> Bootstrap Demo </h1>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit anim id est laborum
-            </p>
-            <p>
-                <a href="#" target="_blank" class="btn btn-primary btn-lg"> Products </a>
-            </p>
+    
+
+    <!-- upload form -->
+    <div id="uploadphoto" class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header text-center">Upload Photo</h1>
+            </div>
+            <!--<div class="col-lg-12">
+                <h1 class="page-header">Upload Photo</h1>
+            </div>-->
         </div>
+        <form>
+            <div class="form-group">
+                <label for="exampleInputName">Name</label>
+                <input type="text" class="form-control" id="exampleInputName" placeholder="Enter name">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputTitle">Photo title</label>
+                <input type="text" class="form-control" id="exampleInputTitle" placeholder="Photo title">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputFile">Choose a photo</label>
+                <input type="file" id="exampleInputFile">
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> Make public
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary">Upload</button>
+        </form>
     </div>
-    <!-- /.jumbotron -->
+    <!-- /.upload form -->
+
+    <br />
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="nav nav-pills nav-justified">
+                        <li><a href="/">© 2015 Padmika</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="Scripts/jquery-1.9.1.min.js"></script>
